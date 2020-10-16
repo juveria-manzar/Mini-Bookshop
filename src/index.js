@@ -16,13 +16,17 @@ const BookList = ()=>{
   );
 }
 
-const Book = () => (
-  <article className="book">
-    <Image/>
-    <Title/>
-    <Author/>
-  </article>
-)
+const Book = () => {
+  const title ='The Subtle Art of Not Giving a F*ck'
+  const author = "Mark Manson";
+  return (
+    <article className="book">
+      <Image />
+      <h1>{title}</h1>
+      <h4>{author}</h4>
+    </article>
+  );
+}
 
 const Image = () => (
   <img
