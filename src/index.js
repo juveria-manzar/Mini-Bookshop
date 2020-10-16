@@ -5,13 +5,13 @@ import './index.css';
 
 const BookList = ()=>{
   return (
-    <section>
-      <Book/>
-      <Book/>
-      <Book/>
-      <Book/>
-      <Book/>
-      <Book/>
+    <section className="booklist">
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
     </section>
   );
 }
