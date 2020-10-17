@@ -7,14 +7,14 @@ import './index.css';
 const firstBook = {
   title : "The Subtle Art of Not Giving a F*ck",
   author:"Mark Manson",
-  img : "https://images-eu.ssl-images-amazon.com/images/I/71t4GuxLCuL._AC_UL200_SR200,200_.jpg"
+  img : 'https://images-eu.ssl-images-amazon.com/images/I/71t4GuxLCuL._AC_UL200_SR200,200_.jpg'
 }
 
 const secondBook = {
   title: "The Alchemist",
   author: "Paulo Coelho ",
   img:
-    "https://images-eu.ssl-images-amazon.com/images/I/71aFt4%2BOTOL._AC_UL200_SR200,200_.jpg",
+    'https://images-eu.ssl-images-amazon.com/images/I/71aFt4%2BOTOL._AC_UL200_SR200,200_.jpg',
 };
 
 const BookList = ()=>{
@@ -23,8 +23,10 @@ const BookList = ()=>{
       <Book
         img={firstBook.img}
         title={firstBook.title}
-        author={firstBook.author}
-      />
+        author={firstBook.author} 
+      >
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro praesentium numquam nam delectus incidunt. Dolorem non repellendus accusamus voluptatibus distinctio?</p>
+      </Book> 
       <Book
         img={secondBook.img}
         title={secondBook.title}
@@ -34,16 +36,17 @@ const BookList = ()=>{
   );
 }
 
-const Book = (props) => {
-  const {img,title,author}=props
+const Book = ({ img, title, author, children }) => {
+  //const {img,title,author} = props
   return (
     <article className="book">
       <img src={img} alt="" />
       <h1>{title}</h1>
       <h4>{author}</h4>
+      {children}
     </article>
   );
-}
+};
 
 // const Image = () => (
 //   <img
