@@ -4,46 +4,36 @@ import ReactDom from 'react-dom';
 //CSS
 import './index.css';
 //setup Vars;
-const firstBook = {
-  title : "The Subtle Art of Not Giving a F*ck",
-  author:"Mark Manson",
-  img : 'https://images-eu.ssl-images-amazon.com/images/I/71t4GuxLCuL._AC_UL200_SR200,200_.jpg'
-}
+const books=[
+  {
+    title : "The Subtle Art of Not Giving a F*ck",
+    author:"Mark Manson",
+    img : 'https://images-eu.ssl-images-amazon.com/images/I/71t4GuxLCuL._AC_UL200_SR200,200_.jpg'
+  },
+  {
+    title: "The Alchemist",
+    author: "Paulo Coelho ",
+    img:
+      'https://images-eu.ssl-images-amazon.com/images/I/71aFt4%2BOTOL._AC_UL200_SR200,200_.jpg',
+  }
+];
 
-const secondBook = {
-  title: "The Alchemist",
-  author: "Paulo Coelho ",
-  img:
-    'https://images-eu.ssl-images-amazon.com/images/I/71aFt4%2BOTOL._AC_UL200_SR200,200_.jpg',
-};
-
+const names= ['John', 'Peter','Susan'];
 const BookList = ()=>{
   return (
     <section className="booklist">
-      <Book
-        img={firstBook.img}
-        title={firstBook.title}
-        author={firstBook.author} 
-      >
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro praesentium numquam nam delectus incidunt. Dolorem non repellendus accusamus voluptatibus distinctio?</p>
-      </Book> 
-      <Book
-        img={secondBook.img}
-        title={secondBook.title}
-        author={secondBook.author}
-      />
+      {books}
     </section>
   );
 }
 
 const Book = (props) => {
-  const {img,title,author} = props
+  const {img, title, author} = props
   return (
     <article className="book">
       <img src={img} alt="" />
       <h1>{title}</h1>
       <h4>{author}</h4>
-      {props.children}
     </article>
   );
 };
