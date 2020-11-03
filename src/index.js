@@ -6,11 +6,13 @@ import './index.css';
 
 const books=[
   {
+    id:1,
     title : "The Subtle Art of Not Giving a F*ck",
     author:"Mark Manson",
     img : 'https://images-eu.ssl-images-amazon.com/images/I/71t4GuxLCuL._AC_UL200_SR200,200_.jpg'
   },
   {
+    id:2,
     title: "The Alchemist",
     author: "Paulo Coelho ",
     img:
@@ -26,6 +28,7 @@ const BookList = ()=>{
       {books.map((book)=>{
         // const { title, author, img } = book
         return <Book
+        id={book.id}
         book={book}
       />
       })}
