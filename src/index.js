@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-
 //CSS
 import './index.css';
-//setup Vars;
+
+
 const books=[
   {
     title : "The Subtle Art of Not Giving a F*ck",
@@ -18,17 +18,24 @@ const books=[
   }
 ];
 
-const names= ['John', 'Peter','Susan'];
+
+
 const BookList = ()=>{
   return (
     <section className="booklist">
-      {books}
+      {books.map((book)=>{
+        // const { title, author, img } = book
+        return <Book
+        book={book}
+      />
+      })}
     </section>
   );
 }
 
 const Book = (props) => {
-  const {img, title, author} = props
+  const {title,author,img}=props.book
+  console.log(props)
   return (
     <article className="book">
       <img src={img} alt="" />
@@ -37,17 +44,6 @@ const Book = (props) => {
     </article>
   );
 };
-
-// const Image = () => (
-//   <img
-//     src={firstBook.img}
-//     alt=""
-//   />
-// );
-
-// const Title = () => <h1>The Subtle Art of Not Giving a F*ck</h1>;
-
-// const Author = () => <h4 style={{color: '#617d98', fontSize:'0.75rem', marginTop:'0.25rem'}}>Mark Manson</h4>;
 
 
 ReactDom.render(<BookList/>, document.getElementById('root'))
