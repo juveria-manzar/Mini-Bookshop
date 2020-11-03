@@ -29,7 +29,7 @@ const BookList = ()=>{
         // const { title, author, img } = book
         return <Book
         id={book.id}
-        book={book}
+        {...book}
       />
       })}
     </section>
@@ -37,7 +37,7 @@ const BookList = ()=>{
 }
 
 const Book = (props) => {
-  const {title,author,img}=props.book
+  const {title,author,img}=props
   console.log(props)
   return (
     <article className="book">
